@@ -1,0 +1,244 @@
+/*-----通用样式-----*/
+* {
+	font-family: "microsoft yahei";
+	margin: 0;
+	padding: 0;
+	-webkit-text-size-adjust: 100%;		/*禁止改变字体大小*/
+}
+html,body {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+.page {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+}
+
+
+/*-----第一页-----*/
+#page1 {
+	background: url(../images/p1_bg.jpg);
+	background-size: cover;
+}
+#curtains {
+	width: 100%;
+	height: 1.9rem;
+	background: url(../images/p1_curtains.png) no-repeat center center;
+	background-size: cover;
+	position: absolute;
+	top: 0;
+}
+#lanten {
+	width: 7.225rem;
+	height: 19.55rem;
+	background: url(../images/p1_lantern.png);
+	background-size: cover;
+	margin: 0 auto;
+	padding-top: 7.8rem;
+	box-sizing: border-box;
+	text-align: center;
+	position: relative;
+	color: #fff;
+	z-index: -1;
+}
+#lanten:before {
+	content: '';
+	display: block;
+	width: 4.8rem;
+	height: 4.8rem;
+	position: absolute;
+	top: 6.8375rem;
+	left: 1.1625rem;
+	background: #d60b3b;
+	box-shadow: 0 0 1.6rem 1.6rem #d60b3b;
+	z-index: -1;
+	border-radius: 50%;
+	opacity: .5;
+	-webkit-animation: shock 1s ease-out infinite alternate;
+			animation: shock 1s ease-out infinite alternate;
+}
+@keyframes shock{
+	0%{opacity: .5; transform: scale(.8, .8);}
+	100%{opacity: 1;}
+}
+@-webkit-keyframes shock{
+	0%{opacity: .5; transform: scale(.8, .8);}
+	100%{opacity: 1;}
+}
+
+/*-----第二页-----*/
+#page2 {
+	background: url(../images/p2_bg.jpg);
+	background-size: cover;
+	display: none;
+	-webkit-transition: .5s;
+			transition: .5s;
+}
+#page2 .p2_loading {
+	height: 100%;
+	width: 100%;
+	-webkit-animation: loading .5s linear;
+	animation: loading .5s linear;
+	z-index: 5;
+	background: #ededed;
+	opacity: 0;
+}
+@-webkit-keyframes loading{
+	0%{opacity: 1;}
+	100%{opacity: 0;}
+}
+@keyframes loading{
+	0%{opacity: 1;}
+	100%{opacity: 0;}
+}
+#page2.fadeOut{
+	opacity: .3;
+	transform: translateY(-100%);
+}
+#page2 .circle {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	background: url(../images/p2_circle_outer.png) no-repeat center center;
+	background-size: cover;
+	width: 9.5rem;
+	height: 9.5rem;
+	-webkit-animation: outer 1s linear 3s infinite;
+			animation: outer 1s linear 3s infinite;
+}
+#page2 .circle:before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	content: '';
+	background: url(../images/p2_circle_middle.png) no-repeat center center;
+	background-size: cover;
+	width: 7.3rem;
+	height: 7.3rem;
+	-webkit-animation: middle 1s linear 2s infinite;
+			animation: middle 1s linear 2s infinite;
+}
+#page2 .circle:after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	content: '';
+	background: url(../images/p2_circle_inner.png) no-repeat center center;
+	background-size: cover;
+	width: 6.39rem;
+	height: 6.39rem;
+	-webkit-animation: inner 1s linear 1s infinite;
+			animation: inner 1s linear 1s infinite;
+}
+@keyframes inner{
+	0%{transform: rotate(0deg);}
+	100%{transform: rotate(-1080deg);}
+}
+@-webkit-keyframes inner{
+	0%{transform: rotate(0deg);}
+	100%{transform: rotate(-1080deg);}
+}
+@keyframes middle{
+	0%{transform: rotate(0deg);}
+	100%{transform: rotate(-720deg);}
+}
+@-webkit-keyframes middle{
+	0%{transform: rotate(0deg);}
+	100%{transform: rotate(-720deg);}
+}
+@keyframes outer{
+	0%{transform: rotate(0deg);}
+	100%{transform: rotate(-360deg);}
+}
+@-webkit-keyframes outer{
+	0%{transform: rotate(0deg);}
+	100%{transform: rotate(-360deg);}
+}
+#page2 p{
+	color: #FFFFFF;
+	text-align: center;
+	height: 3rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+}
+
+/*-----第三页-----*/
+#page3 {
+	background: url(../images/p3_bg.jpg);
+	background-size: cover;
+	display: none;
+	top: 100%;
+	-webkit-transition: .5s;
+			transition: .5s;
+}
+#page3.fadeIn {
+	transform: translateY(-100%);
+}
+#page3 .blessing {
+	width: 6.125rem;
+	height: 6.125rem;
+	background: url(../images/p3_blessing.png) no-repeat center center;
+	background-size: cover;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+}
+@-webkit-keyframes bless{
+	0%{transform: rotate(0deg);}
+	100%{transform: rotate(360deg);}
+}
+@keyframes bless{
+	0%{transform: rotate(0deg);}
+	100%{transform: rotate(360deg);}
+}
+
+#page3 .couplets {
+	width: 3.5rem;
+	position: absolute;
+	top:  5.5rem;
+}
+#page3 .left {
+	left: 0.625rem;
+	background: url(../images/p3-left.png);
+	background-size: cover;
+}
+#page3 .right {
+	right: 0.625rem;
+	background: url(../images/p3-right.png);
+	background-size: cover;
+}
+@keyframes couplets{
+	0%{height: 0;}
+	100%{height: 16.875rem;}
+}
+@-webkit-keyframes couplets{
+	0%{height: 0;}
+	100%{height: 16.875rem;}
+}
+#page3 .head {
+	width: 8.375rem;
+	height: 3.375rem;
+	background: url(../images/p3_2018.png) no-repeat center center;
+	background-size: cover;
+	margin: 2rem auto 0 auto;
+}

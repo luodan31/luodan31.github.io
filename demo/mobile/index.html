@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>春节贺卡</title>
+    <link rel="stylesheet" href="css/index.css">
+    <!--rem适配-->
+    <script>
+    	var html = document.documentElement;
+    	var width = html.getBoundingClientRect().width;
+    	html.style.fontSize = width/16 + 'px';
+    </script>
+</head>
+<body>
+	<div class="page" id="page1">
+		<div id="curtains"></div>
+		<div id="lanten">点击屏幕开启<br />好运2018</div>
+	</div>
+	<div class="page" id="page2">
+		<div class="p2_loading"></div>
+		<div class="circle"></div>
+		<p>霉运删除中<br />请稍后...</p>
+	</div>
+	<div class="page" id="page3">
+		<div class="head"></div>
+		<div class="blessing"></div>
+		<div class="couplets left"></div>
+		<div class="couplets right"></div>
+	</div>
+	
+    <script src="js/index.js"></script>
+</body>
+</html>
